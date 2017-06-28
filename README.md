@@ -18,7 +18,7 @@ func fetchGitHubRepositories(state: State, store: Store<State>) -> Action? {
 }
 ```
 
-This makes it difficult to test action creates, as it is not clear how to replace `Octokit` object with a test stub.
+This makes it difficult to test action creators, as it is not clear how to replace `Octokit` object with a test stub.
 
 ## Solution
 Instead of firing asynchronous operations from withing action creators, fire them from a separate dedicated class, which can be unit tested:
