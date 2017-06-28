@@ -13,6 +13,11 @@
 		2F03C62C1F04453B0067EF41 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62B1F04453B0067EF41 /* State.swift */; };
 		2F03C62E1F04455A0067EF41 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62D1F04455A0067EF41 /* DataService.swift */; };
 		2F03C6301F04458D0067EF41 /* AsyncRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62F1F04458D0067EF41 /* AsyncRequestHandler.swift */; };
+		2F03C6321F0445F20067EF41 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C6251F0444F70067EF41 /* Actions.swift */; };
+		2F03C6331F0445F50067EF41 /* Reducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C6281F0445170067EF41 /* Reducers.swift */; };
+		2F03C6341F0445F70067EF41 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62B1F04453B0067EF41 /* State.swift */; };
+		2F03C6351F0445F90067EF41 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62D1F04455A0067EF41 /* DataService.swift */; };
+		2F03C6361F0445FC0067EF41 /* AsyncRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62F1F04458D0067EF41 /* AsyncRequestHandler.swift */; };
 		2F553D5D1F0433660060A7C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F553D5C1F0433660060A7C2 /* AppDelegate.swift */; };
 		2F553D5F1F0433660060A7C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F553D5E1F0433660060A7C2 /* ViewController.swift */; };
 		2F553D621F0433660060A7C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F553D601F0433660060A7C2 /* Main.storyboard */; };
@@ -361,7 +366,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F03C6331F0445F50067EF41 /* Reducers.swift in Sources */,
+				2F03C6361F0445FC0067EF41 /* AsyncRequestHandler.swift in Sources */,
 				2F553D721F0433660060A7C2 /* ReSwiftTestableAsyncPatternTests.swift in Sources */,
+				2F03C6321F0445F20067EF41 /* Actions.swift in Sources */,
+				2F03C6341F0445F70067EF41 /* State.swift in Sources */,
+				2F03C6351F0445F90067EF41 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
