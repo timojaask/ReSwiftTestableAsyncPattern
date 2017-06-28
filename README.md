@@ -1,8 +1,6 @@
 # ReSwift Testable Async Pattern
 An example of writing testable code with asynchronous requests using ReSwift, leaving your actions and reducers free of side-effects.
 
-------------
-
 ## Problem
 ReSwift documentation suggests to fire asynchronous operations directcly from within action creators:
 
