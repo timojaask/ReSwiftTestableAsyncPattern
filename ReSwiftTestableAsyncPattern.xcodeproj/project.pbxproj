@@ -20,6 +20,7 @@
 		2F03C6361F0445FC0067EF41 /* AsyncRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62F1F04458D0067EF41 /* AsyncRequestHandler.swift */; };
 		2F03C6391F0448E70067EF41 /* EquatableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C6381F0448E70067EF41 /* EquatableExtensions.swift */; };
 		2F03C63B1F0449090067EF41 /* FakeObjectInitializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C63A1F0449090067EF41 /* FakeObjectInitializers.swift */; };
+		2F03C63D1F0449560067EF41 /* AsyncRequestHandlerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C63C1F0449560067EF41 /* AsyncRequestHandlerSpec.swift */; };
 		2F553D5D1F0433660060A7C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F553D5C1F0433660060A7C2 /* AppDelegate.swift */; };
 		2F553D5F1F0433660060A7C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F553D5E1F0433660060A7C2 /* ViewController.swift */; };
 		2F553D621F0433660060A7C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F553D601F0433660060A7C2 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		2F03C62F1F04458D0067EF41 /* AsyncRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncRequestHandler.swift; sourceTree = "<group>"; };
 		2F03C6381F0448E70067EF41 /* EquatableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EquatableExtensions.swift; path = Utilities/EquatableExtensions.swift; sourceTree = "<group>"; };
 		2F03C63A1F0449090067EF41 /* FakeObjectInitializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeObjectInitializers.swift; sourceTree = "<group>"; };
+		2F03C63C1F0449560067EF41 /* AsyncRequestHandlerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncRequestHandlerSpec.swift; sourceTree = "<group>"; };
 		2F553D591F0433660060A7C2 /* ReSwiftTestableAsyncPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReSwiftTestableAsyncPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F553D5C1F0433660060A7C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F553D5E1F0433660060A7C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				2F553D711F0433660060A7C2 /* AppReducerSpec.swift */,
+				2F03C63C1F0449560067EF41 /* AsyncRequestHandlerSpec.swift */,
 				2F03C6371F0448BB0067EF41 /* Utilities */,
 				2F553D731F0433660060A7C2 /* Info.plist */,
 			);
@@ -382,6 +385,7 @@
 			files = (
 				2F03C6331F0445F50067EF41 /* Reducers.swift in Sources */,
 				2F03C6361F0445FC0067EF41 /* AsyncRequestHandler.swift in Sources */,
+				2F03C63D1F0449560067EF41 /* AsyncRequestHandlerSpec.swift in Sources */,
 				2F553D721F0433660060A7C2 /* AppReducerSpec.swift in Sources */,
 				2F03C6391F0448E70067EF41 /* EquatableExtensions.swift in Sources */,
 				2F03C63B1F0449090067EF41 /* FakeObjectInitializers.swift in Sources */,

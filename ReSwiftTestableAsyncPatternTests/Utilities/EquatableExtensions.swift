@@ -1,4 +1,5 @@
 import Foundation
+import ReSwift
 
 extension FetchDataState: Equatable { }
 
@@ -24,4 +25,18 @@ extension Error where Self: Equatable {
 func ==(lhs: Error, rhs: Error) -> Bool {
     return lhs.localizedDescription == rhs.localizedDescription &&
         lhs.isCancelledError == rhs.isCancelledError
+}
+
+extension SetFetchDataState: Equatable { }
+
+func ==(lhs: SetFetchDataState, rhs: SetFetchDataState) -> Bool {
+    return lhs.state == rhs.state
+}
+
+extension Action where Self: Equatable {
+
+}
+
+func ==(lhs: Action, rhs: Action) -> Bool {
+    return lhs == rhs
 }

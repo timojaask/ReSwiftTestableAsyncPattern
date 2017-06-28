@@ -3,12 +3,11 @@ import PromiseKit
 
 class AsyncRequestHandler: StoreSubscriber {
     let dataService: DataService
-    let store: Store<AppState>
+    let store: DispatchingStoreType
 
-    init(dataService: DataService, store: Store<AppState>) {
+    init(dataService: DataService, store: DispatchingStoreType) {
         self.dataService = dataService
         self.store = store
-        store.subscribe(self)
     }
 
     func newState(state: AppState) {
