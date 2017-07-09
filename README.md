@@ -60,7 +60,7 @@ expect(testStore.dispatchedAction).toEventually(equal(expectedAction), timeout: 
 ```
 
 ## Drawbacks and future improvements
-With the current implementation, you'd have to create a new enum for each new asynchronous action:
+With the current implementation, you'd have to create a new enum for each return type of an asynchronous action (the type of data that's passed in `success` case):
 
 ```swift
 enum FetchPostsState {
