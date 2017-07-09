@@ -58,3 +58,46 @@ asyncRequestHandler.newState(state: newState)
 let expectedAction = SetFetchDataState(.success(data: "Hello"))
 expect(testStore.dispatchedAction).toEventually(equal(expectedAction), timeout: 1)
 ```
+
+## Drawbacks and future improvements
+With the current implementation, you'd have to create a new enum for each new asynchronous action:
+
+```swift
+enum FetchPostsState {
+    case none
+    case request
+    case success(posts: [Post])
+    case error(error: Error)
+}
+enum FetchUsersState {
+    case none
+    case request
+    case success(users: [User])
+    case error(error: Error)
+}
+enum FetchWhateverState {
+    case none
+    case request
+    case success(whatever: Whatever)
+    case error(error: Error)
+}
+
+struct FetchPosts: Action { let state: FetchPostsState }
+struct FetchUsers: Action { let state: FetchUsersState }
+struct FetchWhatever: Action { let state: FetchWhateverState }
+```
+
+This will eventually be possible to solve using generics when [SE-0143](https://github.com/apple/swift-evolution/blob/master/proposals/0143-conditional-conformances.md) gets released at some point with [Swift 4.x](https://twitter.com/jckarter/status/872211469856722944). Then you would be able to create a generic asynchronous request state enum, which would be used with every asynchronous action:
+
+```swift
+enum AsyncRequestState<T> {
+    case none
+    case request
+    case success(result: T)
+    case error(error: Error)
+}
+
+struct FetchPosts: Action { let state: AsyncRequestState<[Post]> }
+struct FetchUsers: Action { let state: AsyncRequestState<[User]> }
+struct FetchWhatever: Action { let state: AsyncRequestState<Whatever> }
+```
