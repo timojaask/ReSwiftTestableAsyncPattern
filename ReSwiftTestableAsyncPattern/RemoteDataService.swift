@@ -1,6 +1,6 @@
 import PromiseKit
 
-struct AppDataService: DataService {
+struct RemoteDataService: DataService {
     func fetchData() -> Promise<String> {
         return Promise<String> { fulfill, reject in
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {

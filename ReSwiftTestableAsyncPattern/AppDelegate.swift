@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let debugStoreSubscriber = DebugStoreSubscriber()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        asyncRequestHandler = AsyncRequestHandler(dataService: AppDataService(), store: store)
+        asyncRequestHandler = AsyncRequestHandler(dataService: RemoteDataService(), store: store)
         store.subscribe(asyncRequestHandler!)
         store.subscribe(debugStoreSubscriber)
         store.dispatch(SetFetchDataState(state: .request))
