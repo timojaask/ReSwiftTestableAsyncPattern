@@ -27,6 +27,7 @@
 		2F553D641F0433660060A7C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F553D631F0433660060A7C2 /* Assets.xcassets */; };
 		2F553D671F0433660060A7C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F553D651F0433660060A7C2 /* LaunchScreen.storyboard */; };
 		2F553D721F0433660060A7C2 /* AppReducerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F553D711F0433660060A7C2 /* AppReducerSpec.swift */; };
+		2FC444D91F1AB89D009B051E /* AppDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444D81F1AB89D009B051E /* AppDataService.swift */; };
 		7DD71176E7E09367246F1C80 /* Pods_ReSwiftTestableAsyncPatternTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A62C0DC734AF19842CE2B3C /* Pods_ReSwiftTestableAsyncPatternTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		2F553D6D1F0433660060A7C2 /* ReSwiftTestableAsyncPatternTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReSwiftTestableAsyncPatternTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F553D711F0433660060A7C2 /* AppReducerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducerSpec.swift; sourceTree = "<group>"; };
 		2F553D731F0433660060A7C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FC444D81F1AB89D009B051E /* AppDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDataService.swift; sourceTree = "<group>"; };
 		6301061B4F8102D1C858EF4C /* Pods-ReSwiftTestableAsyncPatternTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftTestableAsyncPatternTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReSwiftTestableAsyncPatternTests/Pods-ReSwiftTestableAsyncPatternTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A62C0DC734AF19842CE2B3C /* Pods_ReSwiftTestableAsyncPatternTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSwiftTestableAsyncPatternTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C6698959FF91F4879B2D245 /* Pods-ReSwiftTestableAsyncPattern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftTestableAsyncPattern.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReSwiftTestableAsyncPattern/Pods-ReSwiftTestableAsyncPattern.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,8 +130,8 @@
 				2F03C6251F0444F70067EF41 /* Actions.swift */,
 				2F03C6281F0445170067EF41 /* Reducers.swift */,
 				2F03C62B1F04453B0067EF41 /* State.swift */,
-				2F03C62D1F04455A0067EF41 /* DataService.swift */,
 				2F03C62F1F04458D0067EF41 /* AsyncRequestHandler.swift */,
+				2FC444D71F1AB87B009B051E /* Services */,
 			);
 			path = ReSwiftTestableAsyncPattern;
 			sourceTree = "<group>";
@@ -143,6 +145,15 @@
 				2F553D731F0433660060A7C2 /* Info.plist */,
 			);
 			path = ReSwiftTestableAsyncPatternTests;
+			sourceTree = "<group>";
+		};
+		2FC444D71F1AB87B009B051E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2F03C62D1F04455A0067EF41 /* DataService.swift */,
+				2FC444D81F1AB89D009B051E /* AppDataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		69E8EE86EF4A6FEFC059EE1C /* Frameworks */ = {
@@ -372,6 +383,7 @@
 				2F03C6261F0444F70067EF41 /* Actions.swift in Sources */,
 				2F553D5F1F0433660060A7C2 /* ViewController.swift in Sources */,
 				2F03C6301F04458D0067EF41 /* AsyncRequestHandler.swift in Sources */,
+				2FC444D91F1AB89D009B051E /* AppDataService.swift in Sources */,
 				2F03C6291F0445170067EF41 /* Reducers.swift in Sources */,
 				2F03C62E1F04455A0067EF41 /* DataService.swift in Sources */,
 				2F03C62C1F04453B0067EF41 /* State.swift in Sources */,
