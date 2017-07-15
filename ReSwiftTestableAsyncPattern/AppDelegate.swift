@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         asyncRequestHandler = AsyncRequestHandler(dataService: AppDataService(), store: store)
         store.subscribe(asyncRequestHandler!)
         store.subscribe(debugStoreSubscriber)
-        store.dispatch(SetFetchDataState(.request))
+        store.dispatch(SetFetchDataState(state: .request))
         return true
     }
 }

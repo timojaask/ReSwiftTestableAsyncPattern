@@ -9,5 +9,4 @@ enum FetchDataState {
 
 struct SetFetchDataState: Action {
     let state: FetchDataState
-    init(_ state: FetchDataState) { self.state = state }
 }

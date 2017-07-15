@@ -8,7 +8,7 @@ class AppReducerSpec: QuickSpec {
 
             it("changes fetchDataState to request when action state is request") {
                 let stateBefore = initialAppState()
-                let stateAfter = appReducer(action: SetFetchDataState(.request), state: stateBefore)
+                let stateAfter = appReducer(action: SetFetchDataState(state: .request), state: stateBefore)
 
                 expect(stateBefore.fetchDataState).to(equal(FetchDataState.none))
                 expect(stateAfter.fetchDataState).to(equal(FetchDataState.request))
@@ -18,7 +18,7 @@ class AppReducerSpec: QuickSpec {
                 let testData = "Some test data"
 
                 let stateBefore = initialAppState()
-                let stateAfter = appReducer(action: SetFetchDataState(.success(data: testData)), state: stateBefore)
+                let stateAfter = appReducer(action: SetFetchDataState(state: .success(data: testData)), state: stateBefore)
 
                 expect(stateAfter.fetchDataState).to(equal(FetchDataState.success(data: testData)))
             }
@@ -28,7 +28,7 @@ class AppReducerSpec: QuickSpec {
                 let testError = TestError.someError
 
                 let stateBefore = initialAppState()
-                let stateAfter = appReducer(action: SetFetchDataState(.error(error: testError)), state: stateBefore)
+                let stateAfter = appReducer(action: SetFetchDataState(state: .error(error: testError)), state: stateBefore)
 
                 expect(stateAfter.fetchDataState).to(equal(FetchDataState.error(error: testError)))
             }

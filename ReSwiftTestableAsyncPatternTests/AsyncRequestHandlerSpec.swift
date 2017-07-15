@@ -13,7 +13,7 @@ class AsyncRequestHandlerSpec: QuickSpec {
                 let testStore = TestStore()
                 requestData(store: testStore, testData: testData)
 
-                let expectedAction = SetFetchDataState(.success(data: testData))
+                let expectedAction = SetFetchDataState(state: .success(data: testData))
                 expect(testStore.dispatchedAction).toEventually(equal(expectedAction), timeout: 1)
             }
 
@@ -22,7 +22,7 @@ class AsyncRequestHandlerSpec: QuickSpec {
                 let testStore = TestStore()
                 requestData(store: testStore, testData: "", failing: true, error: testError)
 
-                let expectedAction = SetFetchDataState(.error(error: testError))
+                let expectedAction = SetFetchDataState(state: .error(error: testError))
                 expect(testStore.dispatchedAction).toEventually(equal(expectedAction), timeout: 1)
             }
         }
@@ -44,7 +44,7 @@ struct TestDataService: DataService {
 }
 
 class TestStore: DispatchingStoreType {
-    var dispatchedAction = SetFetchDataState(.none)
+    var dispatchedAction = SetFetchDataState(state: .none)
     func dispatch(_ action: Action) {
         dispatchedAction = action as! SetFetchDataState
     }
