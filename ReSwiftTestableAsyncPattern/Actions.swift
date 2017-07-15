@@ -1,12 +1,12 @@
 import ReSwift
 
-enum FetchDataState {
+enum FetchUsersState {
     case none
     case request
-    case success(data: String)
+    case success(users: [User])
     case error(error: Error)
 }
 
-struct SetFetchDataState: Action {
-    let state: FetchDataState
+struct SetFetchUsersState: Action {
+    let state: FetchUsersState
 }

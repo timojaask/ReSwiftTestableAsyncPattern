@@ -1,5 +1,5 @@
 import PromiseKit
 
 protocol DataService {
-    func fetchData() -> Promise<String>
+    func fetchUsers() -> Promise<[User]>
 }

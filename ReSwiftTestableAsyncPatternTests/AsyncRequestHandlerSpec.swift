@@ -9,20 +9,21 @@ class AsyncRequestHandlerSpec: QuickSpec {
         describe("") {
 
             it("dispatches success action with correct data after successful request") {
-                let testData = "Some test data"
+                let testUsers = [User(firstName: "First 1", lastName: "Last 1"),
+                                 User(firstName: "First 2", lastName: "Last 2")]
                 let testStore = TestStore()
-                requestData(store: testStore, testData: testData)
+                requestData(store: testStore, testUsers: testUsers)
 
-                let expectedAction = SetFetchDataState(state: .success(data: testData))
+                let expectedAction = SetFetchUsersState(state: .success(users: testUsers))
                 expect(testStore.dispatchedAction).toEventually(equal(expectedAction), timeout: 1)
             }
 
             it("dispatches error action with correct error after failed request") {
                 let testError = TestError.someError
                 let testStore = TestStore()
-                requestData(store: testStore, testData: "", failing: true, error: testError)
+                requestData(store: testStore, testUsers: [], failing: true, error: testError)
 
-                let expectedAction = SetFetchDataState(state: .error(error: testError))
+                let expectedAction = SetFetchUsersState(state: .error(error: testError))
                 expect(testStore.dispatchedAction).toEventually(equal(expectedAction), timeout: 1)
             }
         }
@@ -31,22 +32,22 @@ class AsyncRequestHandlerSpec: QuickSpec {
 
 
 struct TestDataService: DataService {
-    let data: String
+    let users: [User]
     let failing: Bool
     let error: Error
 
-    func fetchData() -> Promise<String> {
+    func fetchUsers() -> Promise<[User]> {
         if failing {
             return Promise.init(error: error)
         }
-        return Promise.init(value: data)
+        return Promise.init(value: users)
     }
 }
 
 class TestStore: DispatchingStoreType {
-    var dispatchedAction = SetFetchDataState(state: .none)
+    var dispatchedAction = SetFetchUsersState(state: .none)
     func dispatch(_ action: Action) {
-        dispatchedAction = action as! SetFetchDataState
+        dispatchedAction = action as! SetFetchUsersState
     }
 }
 
@@ -55,10 +56,10 @@ enum TestError: Error {
 }
 
 
-func requestData(store: DispatchingStoreType, testData: String, failing: Bool = false, error: Error = TestError.someError) {
-    let testDataService = TestDataService(data: testData, failing: failing, error: error)
+func requestData(store: DispatchingStoreType, testUsers: [User], failing: Bool = false, error: Error = TestError.someError) {
+    let testDataService = TestDataService(users: testUsers, failing: failing, error: error)
     let asyncRequestHandler = AsyncRequestHandler(dataService: testDataService, store: store)
 
-    let newState = AppState(remoteData: "", fetchDataState: FetchDataState.request)
+    let newState = AppState(users: [], fetchUsersState: FetchUsersState.request)
     asyncRequestHandler.newState(state: newState)
 }

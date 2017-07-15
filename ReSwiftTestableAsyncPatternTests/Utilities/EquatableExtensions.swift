@@ -1,9 +1,9 @@
 import Foundation
 import ReSwift
 
-extension FetchDataState: Equatable { }
+extension FetchUsersState: Equatable { }
 
-func ==(lhs: FetchDataState, rhs: FetchDataState) -> Bool {
+func ==(lhs: FetchUsersState, rhs: FetchUsersState) -> Bool {
     switch (lhs, rhs) {
     case (.none, .none):
         return true
@@ -18,18 +18,16 @@ func ==(lhs: FetchDataState, rhs: FetchDataState) -> Bool {
     }
 }
 
-extension Error where Self: Equatable {
-
-}
+extension Error where Self: Equatable { }
 
 func ==(lhs: Error, rhs: Error) -> Bool {
     return lhs.localizedDescription == rhs.localizedDescription &&
         lhs.isCancelledError == rhs.isCancelledError
 }
 
-extension SetFetchDataState: Equatable { }
+extension SetFetchUsersState: Equatable { }
 
-func ==(lhs: SetFetchDataState, rhs: SetFetchDataState) -> Bool {
+func ==(lhs: SetFetchUsersState, rhs: SetFetchUsersState) -> Bool {
     return lhs.state == rhs.state
 }
 
@@ -39,4 +37,11 @@ extension Action where Self: Equatable {
 
 func ==(lhs: Action, rhs: Action) -> Bool {
     return lhs == rhs
+}
+
+extension User: Equatable { }
+
+func ==(lhs: User, rhs: User) -> Bool {
+    return lhs.firstName == rhs.firstName &&
+        lhs.lastName == rhs.lastName
 }

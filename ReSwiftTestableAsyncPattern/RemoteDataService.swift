@@ -1,10 +1,10 @@
 import PromiseKit
 
 struct RemoteDataService: DataService {
-    func fetchData() -> Promise<String> {
-        return Promise<String> { fulfill, reject in
+    func fetchUsers() -> Promise<[User]> {
+        return Promise<[User]> { fulfill, reject in
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-                fulfill("Hello from app data service")
+                fulfill([User(firstName: "", lastName: "")])
             }
         }
     }
