@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         asyncRequestHandler = AsyncRequestHandler(dataService: RemoteDataService(), store: store)
         store.subscribe(asyncRequestHandler!)
         store.subscribe(debugStoreSubscriber)
-        store.dispatch(SetFetchUsersState(state: .request))
+        store.dispatch(SetFetchUsers(state: .request))
         return true
     }
 }
@@ -24,6 +24,6 @@ class DebugStoreSubscriber: StoreSubscriber {
     func newState(state: AppState) {
         print("State changed")
         print(" -- users: \(state.users)")
-        print(" -- fetchUsersState: \(state.fetchUsersState)")
+        print(" -- fetchUsersState: \(state.fetchUsers)")
     }
 }

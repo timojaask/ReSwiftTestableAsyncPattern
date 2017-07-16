@@ -1,9 +1,9 @@
 import Foundation
 import ReSwift
 
-extension FetchUsersState: Equatable { }
+extension FetchUsers: Equatable { }
 
-func ==(lhs: FetchUsersState, rhs: FetchUsersState) -> Bool {
+func ==(lhs: FetchUsers, rhs: FetchUsers) -> Bool {
     switch (lhs, rhs) {
     case (.none, .none):
         return true
@@ -25,9 +25,9 @@ func ==(lhs: Error, rhs: Error) -> Bool {
         lhs.isCancelledError == rhs.isCancelledError
 }
 
-extension SetFetchUsersState: Equatable { }
+extension SetFetchUsers: Equatable { }
 
-func ==(lhs: SetFetchUsersState, rhs: SetFetchUsersState) -> Bool {
+func ==(lhs: SetFetchUsers, rhs: SetFetchUsers) -> Bool {
     return lhs.state == rhs.state
 }
 

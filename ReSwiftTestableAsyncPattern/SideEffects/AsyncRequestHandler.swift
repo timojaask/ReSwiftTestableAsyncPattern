@@ -11,10 +11,10 @@ class AsyncRequestHandler: StoreSubscriber {
     }
 
     func newState(state: AppState) {
-        if case FetchUsersState.request = state.fetchUsersState {
+        if case FetchUsers.request = state.fetchUsers {
             dataService.fetchUsers()
-                .then { self.store.dispatch(SetFetchUsersState(state: .success(users: $0))) }
-                .catch { self.store.dispatch(SetFetchUsersState(state: .error(error: $0))) }
+                .then { self.store.dispatch(SetFetchUsers(state: .success(users: $0))) }
+                .catch { self.store.dispatch(SetFetchUsers(state: .error(error: $0))) }
         }
     }
 }

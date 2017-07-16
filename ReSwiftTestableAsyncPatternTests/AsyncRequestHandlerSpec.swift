@@ -14,7 +14,7 @@ class AsyncRequestHandlerSpec: QuickSpec {
                 let testStore = TestStore()
                 requestData(store: testStore, testUsers: testUsers)
 
-                let expectedAction = SetFetchUsersState(state: .success(users: testUsers))
+                let expectedAction = SetFetchUsers(state: .success(users: testUsers))
                 expect(testStore.dispatchedAction).toEventually(equal(expectedAction), timeout: 1)
             }
 
@@ -23,7 +23,7 @@ class AsyncRequestHandlerSpec: QuickSpec {
                 let testStore = TestStore()
                 requestData(store: testStore, testUsers: [], failing: true, error: testError)
 
-                let expectedAction = SetFetchUsersState(state: .error(error: testError))
+                let expectedAction = SetFetchUsers(state: .error(error: testError))
                 expect(testStore.dispatchedAction).toEventually(equal(expectedAction), timeout: 1)
             }
         }
@@ -45,9 +45,9 @@ struct TestDataService: DataService {
 }
 
 class TestStore: DispatchingStoreType {
-    var dispatchedAction = SetFetchUsersState(state: .none)
+    var dispatchedAction = SetFetchUsers(state: .none)
     func dispatch(_ action: Action) {
-        dispatchedAction = action as! SetFetchUsersState
+        dispatchedAction = action as! SetFetchUsers
     }
 }
 
@@ -60,6 +60,6 @@ func requestData(store: DispatchingStoreType, testUsers: [User], failing: Bool =
     let testDataService = TestDataService(users: testUsers, failing: failing, error: error)
     let asyncRequestHandler = AsyncRequestHandler(dataService: testDataService, store: store)
 
-    let newState = AppState(users: [], fetchUsersState: FetchUsersState.request)
+    let newState = AppState(users: [], fetchUsers: FetchUsers.request)
     asyncRequestHandler.newState(state: newState)
 }
