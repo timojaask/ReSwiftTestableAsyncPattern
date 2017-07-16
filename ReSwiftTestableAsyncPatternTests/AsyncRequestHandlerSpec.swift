@@ -42,6 +42,14 @@ struct TestDataService: DataService {
         }
         return Promise.init(value: users)
     }
+
+    func fetchPosts() -> Promise<[Post]> {
+        fatalError("Not implemented")
+    }
+
+    func createPost(post: Post) -> Promise<Void> {
+        fatalError("Not implemented")
+    }
 }
 
 class TestStore: DispatchingStoreType {
@@ -60,6 +68,12 @@ func requestData(store: DispatchingStoreType, testUsers: [User], failing: Bool =
     let testDataService = TestDataService(users: testUsers, failing: failing, error: error)
     let asyncRequestHandler = AsyncRequestHandler(dataService: testDataService, store: store)
 
-    let newState = AppState(users: [], fetchUsers: FetchUsers.request)
+    let newState = AppState(
+        users: [],
+        posts: [],
+        fetchUsers: FetchUsers.request,
+        fetchPosts: FetchPosts.none,
+        createPost: CreatePost.none
+    )
     asyncRequestHandler.newState(state: newState)
 }
