@@ -14,5 +14,13 @@ enum FetchPosts {
     case error(error: Error)
 }
 
+enum CreatePost {
+    case none
+    case request(post: Post)
+    case success()
+    case error(error: Error)
+}
+
 struct SetFetchUsers: Action { let state: FetchUsers }
 struct SetFetchPosts: Action { let state: FetchPosts }
+struct SetCreatePost: Action { let state: CreatePost }

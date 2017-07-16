@@ -5,4 +5,5 @@ struct AppState: StateType {
     var posts: [Post] = []
     var fetchUsers = FetchUsers.none
     var fetchPosts = FetchPosts.none
+    var createPost = CreatePost.none
 }

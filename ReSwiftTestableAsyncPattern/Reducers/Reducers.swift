@@ -16,6 +16,9 @@ func appReducer (action: Action, state: AppState?) -> AppState {
             state.posts = posts
         }
 
+    case let action as SetCreatePost:
+        state.createPost = action.state
+
     default:
         break
     }
