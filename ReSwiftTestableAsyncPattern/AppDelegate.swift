@@ -13,8 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         asyncRequestHandler = AsyncRequestHandler(dataService: RemoteDataService(), store: store)
-        store.subscribe(asyncRequestHandler!)
         store.subscribe(debugStoreSubscriber)
+        store.subscribe(asyncRequestHandler!)
         store.dispatch(SetFetchUsers(state: .request))
         store.dispatch(SetFetchPosts(state: .request))
         store.dispatch(SetCreatePost(state: .request(post: Post(title: "Another post", body: "Hello post"))))
