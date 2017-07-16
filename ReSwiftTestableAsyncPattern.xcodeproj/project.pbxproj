@@ -10,12 +10,12 @@
 		233EAA4568CEF7CF608C4765 /* Pods_ReSwiftTestableAsyncPattern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259100C75BB5FD2C5DE496EC /* Pods_ReSwiftTestableAsyncPattern.framework */; };
 		2F03C6261F0444F70067EF41 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C6251F0444F70067EF41 /* Actions.swift */; };
 		2F03C6291F0445170067EF41 /* Reducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C6281F0445170067EF41 /* Reducers.swift */; };
-		2F03C62C1F04453B0067EF41 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62B1F04453B0067EF41 /* State.swift */; };
+		2F03C62C1F04453B0067EF41 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62B1F04453B0067EF41 /* AppState.swift */; };
 		2F03C62E1F04455A0067EF41 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62D1F04455A0067EF41 /* DataService.swift */; };
 		2F03C6301F04458D0067EF41 /* AsyncRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62F1F04458D0067EF41 /* AsyncRequestHandler.swift */; };
 		2F03C6321F0445F20067EF41 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C6251F0444F70067EF41 /* Actions.swift */; };
 		2F03C6331F0445F50067EF41 /* Reducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C6281F0445170067EF41 /* Reducers.swift */; };
-		2F03C6341F0445F70067EF41 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62B1F04453B0067EF41 /* State.swift */; };
+		2F03C6341F0445F70067EF41 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62B1F04453B0067EF41 /* AppState.swift */; };
 		2F03C6351F0445F90067EF41 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62D1F04455A0067EF41 /* DataService.swift */; };
 		2F03C6361F0445FC0067EF41 /* AsyncRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C62F1F04458D0067EF41 /* AsyncRequestHandler.swift */; };
 		2F03C6391F0448E70067EF41 /* EquatableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03C6381F0448E70067EF41 /* EquatableExtensions.swift */; };
@@ -48,7 +48,7 @@
 		259100C75BB5FD2C5DE496EC /* Pods_ReSwiftTestableAsyncPattern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSwiftTestableAsyncPattern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F03C6251F0444F70067EF41 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		2F03C6281F0445170067EF41 /* Reducers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducers.swift; sourceTree = "<group>"; };
-		2F03C62B1F04453B0067EF41 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		2F03C62B1F04453B0067EF41 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		2F03C62D1F04455A0067EF41 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		2F03C62F1F04458D0067EF41 /* AsyncRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncRequestHandler.swift; sourceTree = "<group>"; };
 		2F03C6381F0448E70067EF41 /* EquatableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EquatableExtensions.swift; path = Utilities/EquatableExtensions.swift; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				2F553D5C1F0433660060A7C2 /* AppDelegate.swift */,
-				2F03C62B1F04453B0067EF41 /* State.swift */,
+				2F03C62B1F04453B0067EF41 /* AppState.swift */,
 				2FC99F161F1BE5C0002BCC98 /* Actions */,
 				2FC99F151F1BE5B0002BCC98 /* Reducers */,
 				2FC99F141F1BE598002BCC98 /* SideEffects */,
@@ -432,7 +432,7 @@
 				2F03C6291F0445170067EF41 /* Reducers.swift in Sources */,
 				2FC444DC1F1AB96F009B051E /* User.swift in Sources */,
 				2F03C62E1F04455A0067EF41 /* DataService.swift in Sources */,
-				2F03C62C1F04453B0067EF41 /* State.swift in Sources */,
+				2F03C62C1F04453B0067EF41 /* AppState.swift in Sources */,
 				2F553D5D1F0433660060A7C2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,7 +449,7 @@
 				2F03C63B1F0449090067EF41 /* FakeObjectInitializers.swift in Sources */,
 				2F03C6321F0445F20067EF41 /* Actions.swift in Sources */,
 				2FC444DE1F1ABAB2009B051E /* RemoteDataService.swift in Sources */,
-				2F03C6341F0445F70067EF41 /* State.swift in Sources */,
+				2F03C6341F0445F70067EF41 /* AppState.swift in Sources */,
 				2FC444DD1F1ABAAF009B051E /* User.swift in Sources */,
 				2F03C6351F0445F90067EF41 /* DataService.swift in Sources */,
 			);
