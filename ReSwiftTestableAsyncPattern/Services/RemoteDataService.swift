@@ -8,4 +8,12 @@ struct RemoteDataService: DataService {
             }
         }
     }
+
+    func fetchPosts() -> Promise<[Post]> {
+        return Promise<[Post]> { fulfill, reject in
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+                fulfill([Post(title: "Post One", body: "Body of post one.")])
+            }
+        }
+    }
 }

@@ -10,6 +10,12 @@ func appReducer (action: Action, state: AppState?) -> AppState {
             state.users = users
         }
 
+    case let action as SetFetchPosts:
+        state.fetchPosts = action.state
+        if case let FetchPosts.success(posts) = action.state {
+            state.posts = posts
+        }
+
     default:
         break
     }

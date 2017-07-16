@@ -31,6 +31,7 @@
 		2FC444DE1F1ABAB2009B051E /* RemoteDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC444D81F1AB89D009B051E /* RemoteDataService.swift */; };
 		2FC99F1A1F1BE66F002BCC98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FC99F181F1BE66F002BCC98 /* LaunchScreen.storyboard */; };
 		2FC99F1B1F1BE66F002BCC98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FC99F191F1BE66F002BCC98 /* Main.storyboard */; };
+		2FC99F1D1F1BE8B8002BCC98 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC99F1C1F1BE8B8002BCC98 /* Post.swift */; };
 		7DD71176E7E09367246F1C80 /* Pods_ReSwiftTestableAsyncPatternTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A62C0DC734AF19842CE2B3C /* Pods_ReSwiftTestableAsyncPatternTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		2FC444DB1F1AB96F009B051E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2FC99F181F1BE66F002BCC98 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FC99F191F1BE66F002BCC98 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2FC99F1C1F1BE8B8002BCC98 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6301061B4F8102D1C858EF4C /* Pods-ReSwiftTestableAsyncPatternTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftTestableAsyncPatternTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReSwiftTestableAsyncPatternTests/Pods-ReSwiftTestableAsyncPatternTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A62C0DC734AF19842CE2B3C /* Pods_ReSwiftTestableAsyncPatternTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSwiftTestableAsyncPatternTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C6698959FF91F4879B2D245 /* Pods-ReSwiftTestableAsyncPattern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftTestableAsyncPattern.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReSwiftTestableAsyncPattern/Pods-ReSwiftTestableAsyncPattern.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				2FC444DB1F1AB96F009B051E /* User.swift */,
+				2FC99F1C1F1BE8B8002BCC98 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				2F03C62E1F04455A0067EF41 /* DataService.swift in Sources */,
 				2F03C62C1F04453B0067EF41 /* AppState.swift in Sources */,
 				2F553D5D1F0433660060A7C2 /* AppDelegate.swift in Sources */,
+				2FC99F1D1F1BE8B8002BCC98 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

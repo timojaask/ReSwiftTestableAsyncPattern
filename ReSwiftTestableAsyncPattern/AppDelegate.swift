@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         store.subscribe(asyncRequestHandler!)
         store.subscribe(debugStoreSubscriber)
         store.dispatch(SetFetchUsers(state: .request))
+        store.dispatch(SetFetchPosts(state: .request))
         return true
     }
 }
@@ -24,6 +25,8 @@ class DebugStoreSubscriber: StoreSubscriber {
     func newState(state: AppState) {
         print("State changed")
         print(" -- users: \(state.users)")
-        print(" -- fetchUsersState: \(state.fetchUsers)")
+        print(" -- posts: \(state.posts)")
+        print(" -- fetchUsers: \(state.fetchUsers)")
+        print(" -- fetchPosts: \(state.fetchPosts)")
     }
 }

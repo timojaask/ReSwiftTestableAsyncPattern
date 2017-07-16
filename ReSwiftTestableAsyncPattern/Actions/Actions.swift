@@ -7,6 +7,12 @@ enum FetchUsers {
     case error(error: Error)
 }
 
-struct SetFetchUsers: Action {
-    let state: FetchUsers
+enum FetchPosts {
+    case none
+    case request
+    case success(posts: [Post])
+    case error(error: Error)
 }
+
+struct SetFetchUsers: Action { let state: FetchUsers }
+struct SetFetchPosts: Action { let state: FetchPosts }

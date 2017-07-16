@@ -16,5 +16,11 @@ class AsyncRequestHandler: StoreSubscriber {
                 .then { self.store.dispatch(SetFetchUsers(state: .success(users: $0))) }
                 .catch { self.store.dispatch(SetFetchUsers(state: .error(error: $0))) }
         }
+
+        if case FetchPosts.request = state.fetchPosts {
+            dataService.fetchPosts()
+                .then { self.store.dispatch(SetFetchPosts(state: .success(posts: $0))) }
+                .catch { self.store.dispatch(SetFetchUsers(state: .error(error: $0))) }
+        }
     }
 }
