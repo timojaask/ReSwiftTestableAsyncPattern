@@ -12,7 +12,6 @@ class AsyncRequestHandler: StoreSubscriber {
 
     func newState(state: AppState) {
         if case FetchUsers.request = state.fetchUsers {
-            print("AsyncRequestHandler: fetchUsers")
             store.dispatch(SetFetchUsers(state: .loading))
             dataService.fetchUsers()
                 .then { self.store.dispatch(SetFetchUsers(state: .success(users: $0))) }
@@ -20,7 +19,6 @@ class AsyncRequestHandler: StoreSubscriber {
         }
 
         if case FetchPosts.request = state.fetchPosts {
-            print("AsyncRequestHandler: fetchPosts")
             store.dispatch(SetFetchPosts(state: .loading))
             dataService.fetchPosts()
                 .then { self.store.dispatch(SetFetchPosts(state: .success(posts: $0))) }
@@ -28,7 +26,6 @@ class AsyncRequestHandler: StoreSubscriber {
         }
 
         if case CreatePost.request(let post) = state.createPost {
-            print("AsyncRequestHandler: createPost")
             store.dispatch(SetCreatePost(state: .loading))
             dataService.createPost(post: post)
                 .then { self.store.dispatch(SetCreatePost(state: .success())) }
