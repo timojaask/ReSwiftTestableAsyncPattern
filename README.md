@@ -1,6 +1,16 @@
 # ReSwift Testable Async Pattern
 An example of writing testable code with asynchronous requests using ReSwift, leaving your actions and reducers free of side-effects. See the example project for fully functional code with unit tests.
 
+**UPDATE**
+
+**Better pattern**
+
+Now I think there's a better way to handle asynchronous actions, which uses middleware. I've made a similar project that demonstrates how that would work:
+
+https://github.com/timojaask/ReSwiftAsyncMiddlewarePattern
+
+I am not planning to continue supporting this solution.
+
 ## Problem
 ReSwift documentation suggests to fire asynchronous operations directcly from within action creators:
 
